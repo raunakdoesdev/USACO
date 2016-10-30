@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/fact4.dir/fact4.cpp.o  -o fact4 

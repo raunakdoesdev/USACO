@@ -1,0 +1,3 @@
+/home/sauhaarda/Desktop/USACO/factorials/CMakeFiles/edit_cache.dir
+/home/sauhaarda/Desktop/USACO/factorials/CMakeFiles/rebuild_cache.dir
+/home/sauhaarda/Desktop/USACO/factorials/CMakeFiles/fact4.dir

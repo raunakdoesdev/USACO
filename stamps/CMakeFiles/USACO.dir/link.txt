@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/USACO.dir/stamps.cpp.o  -o USACO 
