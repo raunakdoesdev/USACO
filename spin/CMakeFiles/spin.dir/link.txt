@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/spin.dir/spin.cpp.o  -o spin 
