@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/kimbits.dir/kimbits.cpp.o  -o kimbits 

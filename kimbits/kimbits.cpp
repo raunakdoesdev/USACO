@@ -1,6 +1,6 @@
 /*
 ID: sauhaar1
-PROG: fact4
+PROG: kimbits
 LANG: C++
 */
 
@@ -12,23 +12,41 @@ LANG: C++
 using namespace std;
 
 int main() {
+    ofstream cout ("kimbits.out");
+    ifstream cin ("kimbits.in");
 
-    int n; // will be calculating factorial of n
+    int N, // number of bits
+        L; // max bits on
+    long long I; // which bit string to print
 
-    ofstream cout ("fact4.out");
-    ifstream cin ("fact4.in");
-
-    cin >> n;
+    cin >> N >> L >> I;
     
-    int lastNonZeroDigit = 1; //last nonzero digit in factorial
-    
-    REP(i, 2, n+1){
-        lastNonZeroDigit *= i;
-        while(lastNonZeroDigit%10==0)
-            lastNonZeroDigit /= 10;
-        lastNonZeroDigit %= 10000;
+    long long numBins[32][32]; // Number of possible binaries with index1 digits
+                               // and index2 set bits
+
+    REP(i, 0, N+1){
+        numBins[i][0] = 1;
+        numBins[0][i] = 1;
     }
+
+    REP(i, 1, N+1)
+        REP(j, 1, L+1)
+            numBins[i][j] = numBins[i-1][j] + numBins[i-1][j-1];
     
-    cout << lastNonZeroDigit%10 << endl;
+    string answer = string(N, ' ');
+    int setBitsLeft = L;
+    
+    REP(i, 0, N){
+        int len = N - i;
+        int numBinsPossible = numBins[len - 1][setBitsLeft]; // number of binaries possible
+        if(numBinsPossible < I){
+            answer[i] = '1';
+            setBitsLeft--;
+            I -= numBinsPossible;
+        }else answer[i] = '0';
+    }
+
+    cout << answer << endl;
+
     return 0;
 }
