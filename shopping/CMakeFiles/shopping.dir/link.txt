@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/shopping.dir/shopping.cpp.o  -o shopping 

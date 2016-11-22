@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/butter.dir/butter.cpp.o  -o butter 
