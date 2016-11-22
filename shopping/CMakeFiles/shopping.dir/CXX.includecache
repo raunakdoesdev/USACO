@@ -9,4 +9,8 @@
 /home/sauhaarda/Desktop/USACO/shopping/shopping.cpp
 fstream
 -
+cstring
+-
+algorithm
+-
 
