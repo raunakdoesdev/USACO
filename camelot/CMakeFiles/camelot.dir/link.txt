@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/camelot.dir/camelot.cpp.o  -o camelot 
