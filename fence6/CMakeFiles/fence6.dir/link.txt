@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/fence6.dir/fence6.cpp.o  -o fence6 
