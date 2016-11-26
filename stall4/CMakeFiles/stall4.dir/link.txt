@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/stall4.dir/stall4.cpp.o  -o stall4 
