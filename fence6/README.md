@@ -78,7 +78,8 @@ The pasture with the smallest perimeter is the one that is enclosed by fence seg
 4 9 5
 </pre>
 
-### OUTPUT FORMAT The output file should contain a single line with a single integer that represents the shortest surrounded perimeter. ### SAMPLE OUTPUT (file fence6.out)
+### OUTPUT FORMAT The output file should contain a single line with a single integer that represents the shortest surrounded perimeter.
+### SAMPLE OUTPUT (file fence6.out)
 
 <pre>12
 </pre>
