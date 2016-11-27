@@ -1,4 +1,3 @@
-<html><head> <title>Spinning Wheels</title> </head>
 <body background="http://train.usaco.org/usaco/bg3.jpg">
 <img src="http://train.usaco.org/usaco/cow1.jpg" width="742" height="118">
 <center>
