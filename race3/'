@@ -1,0 +1,85 @@
+/*
+ID: sauhaar1
+PROG: race3
+LANG: C++
+*/
+
+#define REP(i, a, b)     for (int i = int(a); i < int(b); i++) 
+
+#include <fstream>
+#include <cstring>
+#include <string>
+
+using namespace std;
+
+int n = 0; // total number of arrows
+int numPaths = 0;
+int adj[50][50];
+int visitCount[50];
+
+void dfs(int start, bool visited[],int end){
+    if(start == end){
+        REP(i, 0, n)
+            if(visited[i] && i != end)
+                visitCount[i]++; // increments the visits for each visited node
+        numPaths++; // every path will end at the end
+        return;
+    }
+    REP(i, 0, n){
+        if(adj[start][i] != 0 && i != start && !visited[i]){
+            visited[i] = true;
+            dfs(i, visited, end);
+            visited[i] = false;
+        }
+    }
+}
+
+int main() {
+
+    ofstream cout ("race3.out");
+    ifstream cin ("race3.in");
+    
+    int temp;
+
+    while(cin >> temp && temp != -1){
+        if(temp == -2){
+            n++;
+            continue;
+        }
+        adj[n][temp] = 1;
+    }
+    
+    bool visited[n];
+    memset(visited, 0, sizeof(visited));
+    visited[0] = true;
+    memset(visitCount, 0, sizeof(visitCount));
+
+    dfs(0, visited, n-1);
+
+    int manditoryPoints = 0;
+
+    string s = "";
+    REP(i, 0, n){
+        if(visitCount[i] == numPaths && i != 0 && i != n - 1){
+            manditoryPoints++;
+            s += " " + to_string(i);
+        }
+    }
+    cout << manditoryPoints << s << endl;
+
+    memset(visited, 0, sizeof(visited));
+    memset(visitCount, 0, sizeof(visitCount));
+    visited[0] = true;
+
+    REP(i, 0, n){ // run dfs on every two courses
+        int visited1[n];
+        memset(visited1, 0, sizeof(visited1));
+        dfs(0,i); 
+        REP(i, 0, n)
+            visited1[i] = visited[i]; 
+        memset(visited, 0, sizeof(visited));
+        visited[i] = true;
+        
+    }
+    return 0;
+}

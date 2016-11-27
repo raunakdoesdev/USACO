@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/race3.dir/race3.cpp.o  -o race3 
