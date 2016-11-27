@@ -21,7 +21,7 @@ The input file contains a well-formed course with at most 50 points and at most 
 
 SAMPLE INPUT (file race3.in)
 
-'''1 2 -2
+```1 2 -2
 3 -2
 3 -2
 5 4 -2
@@ -31,12 +31,12 @@ SAMPLE INPUT (file race3.in)
 9 -2
 5 9 -2
 -2
--1'''
+-1```
 
 OUTPUT FORMAT
 
 Your program should write two lines. The first line should contain the number of unavoidable points in the input course, followed by the labels of these points, in ascending order. The second line should contain the number of splitting points of the input course, followed by the labels of all these points, in ascending order.
 SAMPLE OUTPUT (file race3.out)
 
-'''2 3 6
-1 3'''
+```2 3 6
+1 3```
