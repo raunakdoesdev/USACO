@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sauhaarda/Desktop/USACO/job/job.cpp
+fstream
+-
+cstring
+-
+climits
+-
+vector
+-
+algorithm
+-
+
