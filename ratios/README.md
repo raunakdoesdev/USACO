@@ -21,8 +21,8 @@ For example, given the goal <tt>3:4:5</tt> and the ratios of three mixtures:
         2:1:2
 </pre>
 your program should find some minimum number of integer units (the
-`mixture') of the first, second, and third mixture that should be mixed
-together to achieve the goal ratio or print `NONE'.   `Minimum number'
+'mixture') of the first, second, and third mixture that should be mixed
+together to achieve the goal ratio or print 'NONE'.   'Minimum number'
 means the sum of the three non-negative mixture integers is minimized.
 
 <p> For this example, you can combine eight units of mixture 1, one
