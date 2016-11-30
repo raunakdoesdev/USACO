@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/milk6.dir/milk6.cpp.o  -o milk6 

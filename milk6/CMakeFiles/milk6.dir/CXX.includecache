@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sauhaarda/Desktop/USACO/milk6/milk6.cpp
+fstream
+-
+cstring
+-
+utility
+-
+climits
+-
+set
+-
+
