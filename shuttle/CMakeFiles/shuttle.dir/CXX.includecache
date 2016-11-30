@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sauhaarda/Desktop/USACO/shuttle/shuttle.cpp
+fstream
+-
+vector
+-
+stdlib.h
+-
+climits
+-
+iostream
+-
+array
+-
+

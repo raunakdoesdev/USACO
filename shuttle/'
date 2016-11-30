@@ -1,0 +1,141 @@
+/*
+ID: sauhaar1
+PROG: shuttle
+LANG: C++
+ */
+
+#define REP(i, a, b)     for (int i = int(a); i < int(b); i++) // a to b, and variable i is local!
+
+#include <fstream>
+#include <vector>
+#include <stdlib.h>
+#include <climits>
+#include <iostream>
+#include <array>
+
+using namespace std;
+
+int length;
+string goalState;
+vector<int> steps;
+bool killSwitch = false;
+
+// -1 can only move to the right and 1 can only move to the left
+
+bool dfs(string state, int blankSpace){
+    if(killSwitch) return false;
+    if(state == goalState){
+        killSwitch = true;
+        return true;
+    }
+
+    string tempState;
+
+    if(blankSpace > 1 && state[blankSpace - 2] == 'W' && state[blankSpace - 1] == 'B'){
+        tempState = state;
+        tempState[blankSpace - 2] = ' '; 
+        tempState[blankSpace] = 'W';
+
+        bool works = dfs(tempState, blankSpace - 2);
+        if(works){
+            steps.push_back(blankSpace - 1);
+            return true;
+        }
+    }
+
+    if(blankSpace > 0 && state[blankSpace - 1] == 'W'){
+        tempState = state;
+        tempState[blankSpace - 1] = ' '; 
+        tempState[blankSpace] = 'W';
+
+        bool works = dfs(tempState, blankSpace - 1);
+
+        if(works){
+            steps.push_back(blankSpace);
+            return true;
+        }
+    }
+
+    if(blankSpace < length - 1 && state[blankSpace + 1] == 'B' ){
+        tempState = state;
+        tempSteps = steps;
+        tempSteps->push_back(blankSpace + 2); 
+       
+
+        tempState[blankSpace + 1] = ' '; 
+        tempState[blankSpace] = 'B';
+
+        tempSteps = dfs(tempState, goalState, blankSpace + 1, tempSteps);
+
+        if(tempSteps != NULL){
+            int tempSize = tempSteps->size();
+            if(tempSize < answerSize){
+                answerSize = tempSize; 
+                answer = tempSteps;
+            }
+        }
+    }
+
+    if(blankSpace < length - 2 && state[blankSpace + 1] == 'W' && state[blankSpace + 2] == 'B'){
+        tempState = state;
+
+        tempSteps = steps;
+        tempSteps->push_back(blankSpace + 3); 
+
+
+        tempState[blankSpace + 2] = ' '; 
+        tempState[blankSpace] = 'B';
+
+        tempSteps = dfs(tempState, goalState, blankSpace + 2, tempSteps);
+
+        if(tempSteps != NULL){
+            int tempSize = tempSteps->size();
+            if(tempSize < answerSize){
+                answerSize = tempSize; 
+                answer = tempSteps;
+            }
+        }
+    }
+
+    return answer;
+}
+
+int main() {
+
+    ofstream cout ("shuttle.out");
+    ifstream cin ("shuttle.in");
+
+    int n;
+    cin >> n;
+
+    length = 1 + (2*n);
+
+    string initialState = "";
+
+    REP(i, 0, n){
+        initialState += 'W';
+        goalState += 'B';
+    }
+
+    initialState += ' ';
+    goalState += ' ';
+
+    REP(i, n + 1, 2*n + 1){
+        initialState += 'B';
+        goalState += 'W';
+    }
+
+    vector<int>* moves = new vector<int>();
+    moves = dfs(initialState, goalState, n, moves); // should find the answer
+
+    REP(i, 0 , moves->size()){
+        if(i != 0 && i%20 == 0)
+            cout << endl;
+        else if(i != 0)
+            cout << " ";
+        cout << (*moves)[i];
+    }
+
+    cout << endl;
+    return 0;
+}
