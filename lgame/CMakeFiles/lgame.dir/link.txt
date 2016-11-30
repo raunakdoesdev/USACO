@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/lgame.dir/lgame.cpp.o  -o lgame 
