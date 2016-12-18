@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/lasers.dir/lasers.cpp.o  -o lasers 
